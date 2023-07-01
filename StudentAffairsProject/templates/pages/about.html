@@ -1,0 +1,28 @@
+{#{% block content %}#}
+<!DOCTYPE html>
+<html>
+{% include "parts/head.html" %}
+
+<body>
+{% include "parts/navBar.html" %}
+    <div class="page_title_add">
+        <h1 id="AboutUs">About Us</h1>
+    </div>
+    <p class="AboutContent">
+        Welcome to Student Affairs,<br>
+        the online platform dedicated to serving the needs of students everywhere.<br>
+        We established this website in 2023 with the goal of providing resource for students to connect with
+        their peers,<br>
+        discover opportunities for development, and access helpful information and resources.<br>
+        Our mission is to empower students by providing them with the tools they need to succeed academically,
+        professionally,<br>
+        and personally. Whether you are a high school<br>
+        student looking to explore college options,a college student seeking career<br>
+        guidance, or a graduate student preparing for the next stage of your professional<br>
+        journey, we are here to support you.<br>
+    </p>
+    {% include "parts/footer.html" %}
+</body>
+
+</html>
+{#{% endblock content %}#}

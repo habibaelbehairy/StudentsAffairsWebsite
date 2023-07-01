@@ -1,0 +1,18 @@
+<header class="header">
+        <ul>
+            <li><a href="{% url 'Home' %}">Home</a></li>
+            <li><select id="studentoptions" onchange="goToPage()">
+                    <option value="">Students</option>
+                    <option value="{% url 'AddNewStudent' %}">Add</option>
+                    <option value="{% url 'studentStatusPage' %}">Status</option>
+                    <option value="{% url 'StudentDataBase' %}">ActiveStudents</option>
+                </select></li>
+
+            <li><a href="{% url 'about' %}">About Us</a></li>
+
+            <li class="buttoninout">
+                <button id="btnlogin" onclick="pop_up()" class="modal-btn">Login</button>
+                <button id="btnlogout" onclick="logout()" class="modal-btn">Logout</button>
+            </li>
+        </ul>
+</header>

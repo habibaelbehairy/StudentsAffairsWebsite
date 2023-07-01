@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+{% include "parts/head.html" %}
+<body onload="viewAll()">
+{% include "parts/navBar.html" %}
+<div class="headlinediv">
+    <h1>Change student status</h1>
+</div>
+<div id="search-bar">
+    <label for="userInput"></label>
+    <input type="text" id="userInput">
+    <label>
+        <input type="radio" id="idOption" name="option" value="ID" checked>
+        &nbsp;&nbsp;ID
+    </label>
+    <label>
+        <input type="radio" id="nameOption" name="option" value="Name">
+        &nbsp;&nbsp;Name
+    </label>
+    <button id="search-button">Search</button>
+</div>
+<table id="statusTable">
+    <thead>
+    <tr>
+        <th>Student Name</th>
+        <th>Student ID</th>
+        <th>Current Status</th>
+    </tr>
+    </thead>
+    <tbody >
+    </tbody>
+</table>
+<button id="save-table" onclick="saveStatus()">{% csrf_token %}Save status</button>
+{% include "parts/footer.html" %}
+</body>
+</html>

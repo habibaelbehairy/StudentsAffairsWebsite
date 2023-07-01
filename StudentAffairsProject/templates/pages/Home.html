@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+
+
+{% include "parts/head.html" %}
+
+<body>
+<div class="home" id="homeid">
+
+      {% include "parts/navBar.html" %}
+    <h1 class="home_title">
+      Welcome,<br>Student Affairs Community
+    </h1>
+    <div class="images">
+      <div class="image1"></div>
+      <div class="image2"></div>
+    </div>
+  </div>
+<div id="login-modal" class="modal">
+
+    <div class="container">
+      <div class="loginimage"></div>
+      <div class="form">
+        <h1 id="welcomeagain">Welcome Again</h1>
+        <h3 id="logintext"> Login Your account</h3>
+        <div class="form-group">
+          <label id="username">Username</label>
+          <input type="text" class="EnterUsername" placeholder="Enter Username">
+          <label id="password">Password</label>
+          <input type="password" class="EnterPassword" placeholder="Enter Password">
+          <button onclick="checkData()" id="submit">Enroll</button>
+        </div>
+        <img src="images/close.png" height="20px" id="close-btn" onclick="close_modal()">
+      </div>
+    </div>
+  </div>
+{% include "parts/footer.html" %}
+</body>
+
+</html>

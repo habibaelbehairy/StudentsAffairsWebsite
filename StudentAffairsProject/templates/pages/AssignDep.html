@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+{% include "parts/head.html" %}
+
+<body>
+{% include "parts/navBar.html" %}
+<hr>
+
+  <div class="headlinediv">
+    <h1 class="headLine">Assign Department</h1>
+  </div>
+
+
+  <div class="BodyOfForm">
+    <form id="dep">
+      <div>
+        <label>Name
+          <input type="text" id="NameOfStudent" placeholder="Full name" value="" disabled>
+        </label>
+        <label>ID
+          <input id="ID" type="number" placeholder="ID" disabled>
+        </label>
+      </div>
+
+      <div>
+        <label>Department
+          <select id="Department" name="choice" onclick="checklevel()">
+            <option class="op" value="CS">CS</option>
+            <option class="op" value="IS">IS</option>
+            <option class="op" value="AI">AI</option>
+            <option class="op" value="IT">IT</option>
+            <option class="op" value="DS">DS</option>
+          </select>
+        </label>
+
+        <label>Level
+          <select id="Level" name="choice" disabled>
+            <option class="op" value="1">Level 1</option>
+            <option class="op" value="2" selected>Level 2</option>
+            <option class="op" value="3">Level 3</option>
+            <option class="op" value="4">Level 4</option>
+          </select>
+        </label>
+      </div>
+    </form>
+  </div>
+  <div class="assign">
+    <button class="assign_btn" type="assign" id="assign" onclick="updatestuddep()">Assign</button>
+  </div>
+
+    {% include "parts/footer.html" %}
+</body>
+
+</html>
+

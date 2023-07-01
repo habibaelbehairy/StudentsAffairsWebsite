@@ -1,0 +1,102 @@
+{#{% block content %}#}
+<!DOCTYPE html>
+<html>
+{% include "parts/head.html" %}
+
+<body>
+{% include "parts/navBar.html" %}
+<div class="headlinediv">
+    <h1 class="headLine">Add a New Student</h1>
+</div>
+{% if exist %}
+    <script>
+        alert("This ID is already exist");
+    </script>
+{% endif %}
+
+<div class="BodyOfForm">
+    <form action="{% url 'AddNewStudent' %}" id="addForm" method="post">
+        {% csrf_token %}
+        <div>
+            <label>Name
+                <input name="name" type="text" id="NameOfStudent" placeholder="Full name" value="">
+            </label>
+            <label>ID
+                <input name="id" id="ID" type="number" placeholder="ID">
+            </label>
+        </div>
+
+        <div>
+            <label>Moblie
+                <input name="mobile" id="Moblie" type="tel" placeholder="+02">
+            </label>
+
+            <label>Email
+                <input name="email" id="Email" type="email" placeholder="example@gmail.com">
+            </label>
+        </div>
+
+        <div>
+            <label>Date of birth
+                <input name="date_of_birth" id="Dateofbirth" type="date">
+            </label>
+
+            <label>Level
+                <select id="Level" name="choice1">
+                    <option class="op" value="1">Level 1</option>
+                    <option class="op" value="2" selected>Level 2</option>
+                    <option class="op" value="3">Level 3</option>
+                    <option class="op" value="4">Level 4</option>
+                </select>
+            </label>
+        </div>
+        <div>
+            <label>Department
+                <select id="Department" name="choice" onclick="checklevel()">
+                    <option class="op" value="General" selected>General</option>
+                    <option class="op" value="CS">CS</option>
+                    <option class="op" value="IS">IS</option>
+                    <option class="op" value="AI">AI</option>
+                    <option class="op" value="IT">IT</option>
+                    <option class="op" value="DS">DS</option>
+                </select>
+            </label>
+            <label>GPA
+                <input name="GPA" id="gpa" type="number" step="0.01" placeholder="ex: 4.0">
+            </label>
+        </div>
+        <div>
+            <div class="Gender">
+                <label>Gender</label>
+                <label for="">
+                    <input id="Gender" type="radio" name="Gender" value="male">Male
+                    <input id="Gender" type="radio" name="Gender" value="female" required>Female
+                </label>
+            </div>
+            <div class="Activation">
+                <label>Activation Status</label>
+                <label for="">
+                    <input id="Active" type="radio" name="ActivationStutes" value="Active" required>Active
+                    <input id="Active" type="radio" name="ActivationStutes" value="NotActive">Inactive
+                </label>
+            </div>
+        </div>
+        <div class="Send">
+            <button type="submit" onclick="checkValidation()">Submit</button>
+            <button type="reset">Reset</button>
+        </div>
+    </form>
+</div>
+
+{% include "parts/footer.html" %}
+{% comment %} <script>
+    var m = {{exist}};
+    console.log(str(m));
+    if (m == 1) {
+        alert("This ID is already exist");
+    }
+</script> {% endcomment %}
+</body>
+
+</html>
+{#{% endblock content %}#}

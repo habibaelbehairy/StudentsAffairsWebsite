@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include "parts/head.html" %}
+<body>
+{% include "parts/navBar.html" %}
+<hr>
+	<div class="page_title_add">
+		<h1 class="databaseh1">Student Table</h1>
+	</div>
+
+	<div class="search">
+		<div class="searchimage1"></div>
+		<input id="searchbar" type="text" placeholder="Search by Name" onkeyup="Search()" ;>
+	</div>
+
+	<table class="tabledb">
+		<tr class="trthdb">
+			<th class="thdb">Name</th>
+			<th class="thdb">ID</th>
+			<th class="thdb">Date Of Birth</th>
+			<th class="thdb">GPA</th>
+			<th class="thdb">Email</th>
+			<th class="thdb">Gender</th>
+			<th class="thdb">Status</th>
+			<th class="thdb">Phone Number</th>
+			<th class="thdb">Level</th>
+			<th class="thdb">Department</th>
+			<th class="thdb"></th>
+		</tr>
+		{% for student in DataBase %}
+			{% if student.active_status %}
+				<tr class="trdb">
+					<td class="tddb">{{ student.name }}</td>
+					<td class="tddb">{{ student.id }}</td>
+					<td class="tddb">{{ student.date_of_birth }}</td>
+					<td class="tddb">{{ student.gpa }}</td>
+					<td class="tddb">{{ student.email }}</td>
+					<td class="tddb">{{ student.gender }}</td>
+					<td class="tddb">{{ student.active_status }}</td>
+					<td class="tddb">{{ student.mobile }}</td>
+					<td class="tddb">{{ student.level }}</td>
+					<td class="tddb">{{ student.department }}</td>
+					<td class="tddb">
+						<select id="databaseoptions1" class="databaseoptions" onchange="ChangePage(this)">
+							<option value=""></option>
+							<option value="{% url 'UpdateAndDelete' student.id %}">Update</option>
+							<option value="{% url 'AssignDep' student.id  %}">Department</option>
+						</select>
+					</td>
+				</tr>
+			{% endif %}
+	  	{% endfor %}
+
+		<tbody id="tcontent"></tbody>
+
+
+	</table>
+    {% include "parts/footer.html" %}
+</body>
+
+</html>
