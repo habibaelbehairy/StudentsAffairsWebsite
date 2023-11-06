@@ -3,6 +3,7 @@ This web application, built using HTML, CSS, JavaScript, and Python with Django,
 serves as a student management system for a university's student affairs department.<br />
 The system enables users to perform various operations related to student management,<br />
 such as adding, updating, and deleting student information, as well as assigning departments to students.<br />
+
 Authors: Habiba Alaa , Amira Ashraf , Tawfik Mohamed , Ahmed Alaa , Kareem Magdy , Alaa Omran.<br />
 
 Minimum Functionalities<br />
